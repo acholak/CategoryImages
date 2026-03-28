@@ -76,16 +76,12 @@ export default function GeneratePage() {
     setError(null);
     setResult(null);
 
-    const groceryNote = form.grocery
-      ? 'Show a small group of 2–3 related items, not a single hero. Items must not overlap and must share the same angle.'
-      : '';
-    const combinedNotes = [groceryNote, form.notes.trim()].filter(Boolean).join(' ');
-
     const body: GenerateRequest = {
-      category: form.category.trim(),
-      market:   form.market,
-      angle:    form.angle,
-      ...(combinedNotes && { notes: combinedNotes }),
+      category:  form.category.trim(),
+      market:    form.market,
+      angle:     form.angle,
+      isGrocery: form.grocery,
+      ...(form.notes.trim() && { notes: form.notes.trim() }),
     };
 
     try {

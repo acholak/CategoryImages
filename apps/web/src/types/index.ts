@@ -4,6 +4,7 @@ export interface GenerateRequest {
   category: string;
   market: string;
   angle: CameraAngle;
+  isGrocery?: boolean;
   keyTexture?: string;
   notes?: string;
 }
