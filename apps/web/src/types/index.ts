@@ -21,10 +21,11 @@ export interface GenerateResult {
 
 export interface ImageRecord {
   id: string;
-  userId: string;
   category: string;
   market: string;
   angle: CameraAngle;
-  figmaUrl: string;
-  createdAt: string;
+  notes: string | null;
+  url_1: string;
+  url_2: string;
+  created_at: string;
 }

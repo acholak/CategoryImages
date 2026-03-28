@@ -1,9 +1,11 @@
 'use strict';
 
 const { Router } = require('express');
+const { randomUUID } = require('crypto');
 const { body, validationResult } = require('express-validator');
 const { buildPrompt, VALID_ANGLES } = require('../lib/promptBuilder');
 const { generateImage } = require('../lib/providers/fal');
+const { saveImage } = require('../lib/db');
 
 const router = Router();
 
@@ -52,7 +54,11 @@ router.post('/', validate, async (req, res, next) => {
       generateImage(prompt),
     ]);
 
+    const id = randomUUID();
+    saveImage({ id, category, market, angle, notes: notes ?? null, url_1: option1, url_2: option2 });
+
     res.json({
+      id,
       category,
       market,
       images: [

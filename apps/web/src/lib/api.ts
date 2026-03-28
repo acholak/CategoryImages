@@ -21,7 +21,4 @@ export const api = {
 
   getImages: (page = 1) =>
     request<{ items: ImageRecord[]; total: number }>(`/api/images?page=${page}`),
-
-  getImage: (id: string) =>
-    request<ImageRecord>(`/api/images/${id}`),
 };
