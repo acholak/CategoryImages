@@ -1,0 +1,68 @@
+'use strict';
+
+const { Router } = require('express');
+const { body, validationResult } = require('express-validator');
+const { buildPrompt, VALID_ANGLES } = require('../lib/promptBuilder');
+const { generateImage } = require('../lib/providers/fal');
+
+const router = Router();
+
+const validate = [
+  body('category')
+    .trim()
+    .notEmpty().withMessage('category is required')
+    .isLength({ max: 100 }).withMessage('category must be 100 characters or fewer'),
+  body('market')
+    .trim()
+    .notEmpty().withMessage('market is required')
+    .isLength({ max: 100 }).withMessage('market must be 100 characters or fewer'),
+  body('angle')
+    .trim()
+    .notEmpty().withMessage('angle is required')
+    .isIn(VALID_ANGLES).withMessage(`angle must be one of: ${VALID_ANGLES.join(', ')}`),
+  body('isGrocery')
+    .optional()
+    .isBoolean().withMessage('isGrocery must be a boolean'),
+  body('keyTexture')
+    .optional()
+    .trim()
+    .isLength({ max: 200 }).withMessage('keyTexture must be 200 characters or fewer'),
+  body('notes')
+    .optional()
+    .trim()
+    .isLength({ max: 500 }).withMessage('notes must be 500 characters or fewer'),
+];
+
+// POST /api/generate
+// Generates 2 PNG options with transparent background
+router.post('/', validate, async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { category, market, angle, isGrocery, keyTexture, notes } = req.body;
+
+  try {
+    const prompt = buildPrompt({ category, market, angle, isGrocery, keyTexture, notes });
+
+    // Generate 2 options in parallel
+    const [option1, option2] = await Promise.all([
+      generateImage(prompt),
+      generateImage(prompt),
+    ]);
+
+    res.json({
+      category,
+      market,
+      images: [
+        { id: 1, url: option1 },
+        { id: 2, url: option2 },
+      ],
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+module.exports = router;

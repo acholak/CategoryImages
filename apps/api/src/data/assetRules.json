@@ -1,0 +1,387 @@
+{
+  "asset_set_name": "deliveroo_food_category_images",
+  "version": "1.1",
+  "summary": {
+    "overall_assessment": "Commercially strong, appetising, and mostly consistent food cut-out image system for marketplace/category use.",
+    "primary_strengths": [
+      "Strong appetite appeal",
+      "Consistent 3/4 commercial food photography style",
+      "Transparent background for flexible UI usage",
+      "Good recognisability for several hero categories",
+      "High retouch polish and modern marketplace feel"
+    ],
+    "primary_risks": [
+      "Some category overlap at small sizes",
+      "Inconsistent visual weight across assets",
+      "Shadow treatment slightly heavy in places",
+      "A few assets are less scalable as navigation symbols",
+      "Kebab asset appears weaker/lower consistency than the rest"
+    ],
+    "recommended_next_step": "Turn the set into a stricter scalable image system with small-size variants, tighter silhouette rules, clearer differentiation for overlapping cuisine categories, and stricter item-count limits for grocery category assets.",
+    "small_size_rule": "For future grocery category images intended to read at very small sizes, keep to 2-3 items maximum."
+  },
+  "images": [
+    {
+      "id": "pizza_margherita",
+      "filename": "35_Deliveroo_PizzaMargherita_45 1.png",
+      "label": "Pizza",
+      "group": "pizza",
+      "subject": "Margherita pizza on parchment",
+      "composition": "Large round hero object, angled top view, strong frame fill",
+      "readability_small_size": "high",
+      "category_clarity": "high",
+      "what_works": [
+        "Strong silhouette",
+        "Instant recognition",
+        "Balanced garnish",
+        "Excellent frame fill"
+      ],
+      "issues": [],
+      "priority": "keep"
+    },
+    {
+      "id": "american_fried_chicken_burger",
+      "filename": "american.png",
+      "label": "American / Fried Chicken Burger",
+      "group": "american",
+      "subject": "Fried chicken burger on paper",
+      "composition": "Centred stacked handheld with large bun silhouette",
+      "readability_small_size": "high",
+      "category_clarity": "high",
+      "what_works": [
+        "Strong handheld shape",
+        "Crisp fried texture",
+        "Very commercial and appetising"
+      ],
+      "issues": [
+        "Can overlap slightly with burgers category if labels are weak"
+      ],
+      "priority": "keep"
+    },
+    {
+      "id": "asian_bowl",
+      "filename": "asian.png",
+      "label": "Asian",
+      "group": "asian",
+      "subject": "Mixed bowl with egg, vegetables, and meat",
+      "composition": "Top/angled bowl composition with many components",
+      "readability_small_size": "medium",
+      "category_clarity": "low",
+      "what_works": [
+        "Colourful ingredients",
+        "Healthy, fresh feel"
+      ],
+      "issues": [
+        "Too generic relative to Korean/Thai/Chinese",
+        "Detail-dependent",
+        "Weak category ownership"
+      ],
+      "priority": "revise"
+    },
+    {
+      "id": "croissant",
+      "filename": "bakery.png",
+      "label": "Bakery",
+      "group": "bakery",
+      "subject": "Croissant with flakes",
+      "composition": "Single pastry hero with strong diagonal silhouette",
+      "readability_small_size": "high",
+      "category_clarity": "high",
+      "what_works": [
+        "Excellent silhouette",
+        "Strong texture",
+        "Clear bakery signal"
+      ],
+      "issues": [
+        "Shadow slightly heavy"
+      ],
+      "priority": "keep"
+    },
+    {
+      "id": "acai_breakfast_bowl",
+      "filename": "breakfast.png",
+      "label": "Breakfast",
+      "group": "breakfast",
+      "subject": "Acai bowl with fruit and granola",
+      "composition": "Top/angled bowl with colourful toppings",
+      "readability_small_size": "medium",
+      "category_clarity": "medium",
+      "what_works": [
+        "Fresh fruit colour contrast",
+        "Healthy breakfast cue"
+      ],
+      "issues": [
+        "Can overlap with healthy/vegan bowls",
+        "Meaning weakens when shrunk"
+      ],
+      "priority": "refine"
+    },
+    {
+      "id": "classic_burger",
+      "filename": "burgers.png",
+      "label": "Burgers",
+      "group": "burgers",
+      "subject": "Classic cheeseburger on paper",
+      "composition": "Centred burger stack, heavy rounded bun silhouette",
+      "readability_small_size": "high",
+      "category_clarity": "high",
+      "what_works": [
+        "Iconic category read",
+        "Good layering visibility",
+        "Strong visual weight"
+      ],
+      "issues": [],
+      "priority": "keep"
+    },
+    {
+      "id": "burrito",
+      "filename": "burrito.png",
+      "label": "Burrito / Mexican",
+      "group": "burrito",
+      "subject": "Foil-wrapped burrito with visible filling",
+      "composition": "Diagonal wrapped handheld with visible cross-section",
+      "readability_small_size": "high",
+      "category_clarity": "high",
+      "what_works": [
+        "Strong silhouette",
+        "Clear cuisine signal",
+        "Good variety in texture"
+      ],
+      "issues": [],
+      "priority": "keep"
+    },
+    {
+      "id": "sweet_sour_rice_bowl",
+      "filename": "chinese.png",
+      "label": "Chinese",
+      "group": "chinese",
+      "subject": "Saucy rice bowl",
+      "composition": "Bowl split between rice and sauced main",
+      "readability_small_size": "medium",
+      "category_clarity": "medium",
+      "what_works": [
+        "Warm colour contrast",
+        "Good food gloss",
+        "Clear bowl structure"
+      ],
+      "issues": [
+        "Less distinctive than a more iconic Chinese cue",
+        "Can blend into broader Asian bowl categories"
+      ],
+      "priority": "revise"
+    },
+    {
+      "id": "coffee_pair",
+      "filename": "coffee.png",
+      "label": "Coffee",
+      "group": "coffee",
+      "subject": "Hot coffee and iced coffee",
+      "composition": "Paired drinks, one hot and one cold",
+      "readability_small_size": "high",
+      "category_clarity": "high",
+      "what_works": [
+        "Clear beverage signal",
+        "Strong contrast between hot and iced",
+        "Useful category breadth"
+      ],
+      "issues": [
+        "Visual weight slightly lighter than food heroes"
+      ],
+      "priority": "keep"
+    },
+    {
+      "id": "cheesecake",
+      "filename": "desserts.png",
+      "label": "Desserts",
+      "group": "desserts",
+      "subject": "Cheesecake slice with berry topping",
+      "composition": "Single plated dessert with strong triangular slice",
+      "readability_small_size": "high",
+      "category_clarity": "high",
+      "what_works": [
+        "Excellent silhouette",
+        "Bright topping contrast",
+        "Strong dessert cue"
+      ],
+      "issues": [],
+      "priority": "keep"
+    },
+    {
+      "id": "healthy_tray",
+      "filename": "healthy.png",
+      "label": "Healthy",
+      "group": "healthy",
+      "subject": "Protein tray with grains and vegetables",
+      "composition": "Compartment tray with balanced meal layout",
+      "readability_small_size": "medium",
+      "category_clarity": "medium",
+      "what_works": [
+        "Strong healthy meal signal",
+        "Varied ingredient zones"
+      ],
+      "issues": [
+        "More functional than iconic",
+        "May not stand out in a dense grid"
+      ],
+      "priority": "refine"
+    },
+    {
+      "id": "ice_cream",
+      "filename": "icecream.png",
+      "label": "Ice Cream",
+      "group": "icecream",
+      "subject": "Scoops of chocolate and vanilla ice cream",
+      "composition": "Simple bowl with rounded scoop forms",
+      "readability_small_size": "high",
+      "category_clarity": "high",
+      "what_works": [
+        "Simple shape logic",
+        "Strong dessert read",
+        "Good tonal contrast"
+      ],
+      "issues": [],
+      "priority": "keep"
+    },
+    {
+      "id": "kebab_wrap",
+      "filename": "kebab.png",
+      "label": "Kebab",
+      "group": "kebab",
+      "subject": "Wrapped kebab with chips and meat",
+      "composition": "Diagonal wrapped item with paper wrap",
+      "readability_small_size": "medium",
+      "category_clarity": "medium",
+      "what_works": [
+        "Clear handheld format",
+        "Recognisable filling"
+      ],
+      "issues": [
+        "Feels lower resolution / different production batch",
+        "Less polished than the rest",
+        "Should be rebuilt for consistency"
+      ],
+      "priority": "rebuild"
+    },
+    {
+      "id": "korean_bowl",
+      "filename": "korean.png",
+      "label": "Korean",
+      "group": "korean",
+      "subject": "Bibimbap-style bowl with egg and vegetables",
+      "composition": "Top/angled bowl with segmented ingredients",
+      "readability_small_size": "medium",
+      "category_clarity": "medium",
+      "what_works": [
+        "Bright central egg focal point",
+        "Structured ingredient arrangement"
+      ],
+      "issues": [
+        "Can overlap with generic Asian bowl",
+        "Needs stronger distinctive Korean cue"
+      ],
+      "priority": "refine"
+    },
+    {
+      "id": "thai_curry",
+      "filename": "thai.png",
+      "label": "Thai",
+      "group": "thai",
+      "subject": "Green curry with herbs and chilli",
+      "composition": "Wide bowl/plate with liquid curry surface",
+      "readability_small_size": "medium",
+      "category_clarity": "medium",
+      "what_works": [
+        "Colour is distinctive",
+        "Fresh herb and chilli garnish helps"
+      ],
+      "issues": [
+        "Liquid dish is less silhouette-driven",
+        "Reads less clearly at small size"
+      ],
+      "priority": "refine"
+    },
+    {
+      "id": "vegan_bowl",
+      "filename": "vegan.png",
+      "label": "Vegan",
+      "group": "vegan",
+      "subject": "Plant-based bowl with avocado, quinoa, chickpeas and greens",
+      "composition": "Top/angled bowl with multiple fresh components",
+      "readability_small_size": "medium",
+      "category_clarity": "medium",
+      "what_works": [
+        "Fresh colour palette",
+        "Clear plant-based ingredients"
+      ],
+      "issues": [
+        "Overlaps visually with healthy and breakfast bowls",
+        "Needs stronger hierarchy for small-size use"
+      ],
+      "priority": "refine"
+    }
+  ],
+  "system_recommendations": {
+    "highest_priority_actions": [
+      "Rebuild the kebab asset",
+      "Clarify overlap between Asian, Chinese, Korean, Thai, Healthy, Vegan, and Breakfast",
+      "Standardise visual weight across all assets",
+      "Refine shadow treatment for consistency",
+      "Create simplified small-size tile variants",
+      "For grocery category assets, cap compositions at 2-3 items to preserve very small-size readability"
+    ],
+    "future_schema": {
+      "tier_1": "Hero assets for marketing and large modules",
+      "tier_2": "Category tile assets optimised for navigation",
+      "tier_3": "Micro assets for chips, filters, and small UI"
+    },
+    "small_size_spec": {
+      "goal": "Assets must remain recognisable in very small UI tiles",
+      "rules": [
+        "Limit grocery category imagery to 2-3 items",
+        "Use fewer visual planes",
+        "Avoid clutter and decorative extras",
+        "Test recognition at tiny tile sizes before approval"
+      ]
+    }
+  },
+  "grocery_category_image_rules": {
+    "intended_use": "Very small category tiles, shortcuts, and navigation surfaces",
+    "max_items": 3,
+    "preferred_item_count": 3,
+    "minimum_item_count": 2,
+    "composition_rules": [
+      "Use only grocery items",
+      "Keep to 2-3 packaged items maximum",
+      "Arrange items as a tight grouped cluster",
+      "Prioritise strong, simple silhouettes",
+      "Ensure the group reads clearly at very small size",
+      "Avoid tiny secondary details that disappear when reduced",
+      "Transparent background only",
+      "No brand logos",
+      "No item names or packaging text",
+      "No non-grocery props"
+    ],
+    "market_rules": {
+      "uk": [
+        "Use packaging formats familiar to the UK grocery market",
+        "Keep forms generic and unbranded",
+        "Prefer recognisable supermarket-style packaging cues"
+      ]
+    },
+    "visual_priority": [
+      "Recognition speed",
+      "Silhouette clarity",
+      "Balanced visual weight",
+      "Small-size readability"
+    ],
+    "example_for_milk": {
+      "category": "grocery_milk_uk",
+      "recommended_items": [
+        "semi-skimmed style plastic milk bottle",
+        "whole milk style bottle or carton",
+        "alternative milk carton"
+      ],
+      "note": "Keep the three items tightly grouped and simple enough to read instantly at tiny sizes."
+    }
+  }
+}
