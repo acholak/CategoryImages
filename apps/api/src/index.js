@@ -16,10 +16,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(helmet());
 
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS?.split(',').map(o => o.trim()) ?? [],
-  credentials: true,
-}));
+const isDev = process.env.NODE_ENV !== 'production';
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim())
+  : isDev ? ['http://localhost:3001'] : [];
+
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 app.use(express.json({ limit: '50kb' }));
 app.use(express.urlencoded({ extended: false, limit: '50kb' }));
