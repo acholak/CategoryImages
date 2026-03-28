@@ -1,7 +1,12 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import { api } from '@/lib/api';
+import { api, BASE_URL } from '@/lib/api';
+
+function resolveUrl(path: string) {
+  if (path.startsWith('http')) return path;
+  return `${BASE_URL}${path}`;
+}
 import type { ImageRecord } from '@/types';
 
 const PAGE_SIZE = 20;
@@ -117,7 +122,7 @@ export default function HistoryPage() {
                 <div key={record.id} className="card !p-3 flex flex-col gap-3">
                   {/* Two thumbnails side by side */}
                   <div className="grid grid-cols-2 gap-1.5">
-                    {[record.url_1, record.url_2].map((url, i) => (
+                    {[resolveUrl(record.url_1), resolveUrl(record.url_2)].map((url, i) => (
                       <div key={i} className="rounded-md overflow-hidden bg-neutral-100 aspect-square">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -140,7 +145,7 @@ export default function HistoryPage() {
 
                   {/* Download buttons */}
                   <div className="grid grid-cols-2 gap-1.5">
-                    {[record.url_1, record.url_2].map((url, i) => (
+                    {[resolveUrl(record.url_1), resolveUrl(record.url_2)].map((url, i) => (
                       <button
                         key={i}
                         type="button"

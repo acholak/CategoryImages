@@ -6,6 +6,7 @@ const { body, validationResult } = require('express-validator');
 const { buildPrompt, VALID_ANGLES } = require('../lib/promptBuilder');
 const { generateImage } = require('../lib/providers/fal');
 const { saveImage } = require('../lib/db');
+const { saveImageFromUrl } = require('../lib/storage');
 
 const router = Router();
 
@@ -55,15 +56,23 @@ router.post('/', validate, async (req, res, next) => {
     ]);
 
     const id = randomUUID();
-    saveImage({ id, category, market, angle, notes: notes ?? null, url_1: option1, url_2: option2 });
+    const base = `${req.protocol}://${req.get('host')}`;
+
+    // Download and persist both images before responding
+    const [local1, local2] = await Promise.all([
+      saveImageFromUrl(option1, id, 1),
+      saveImageFromUrl(option2, id, 2),
+    ]);
+
+    saveImage({ id, category, market, angle, notes: notes ?? null, url_1: local1, url_2: local2 });
 
     res.json({
       id,
       category,
       market,
       images: [
-        { id: 1, url: option1 },
-        { id: 2, url: option2 },
+        { id: 1, url: `${base}${local1}` },
+        { id: 2, url: `${base}${local2}` },
       ],
     });
   } catch (err) {

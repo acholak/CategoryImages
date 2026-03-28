@@ -18,6 +18,9 @@ apps/api/data/*.db
 apps/api/data/*.db-shm
 apps/api/data/*.db-wal
 
+# Stored generated images
+apps/api/data/images/
+
 # Logs
 logs/
 *.log
